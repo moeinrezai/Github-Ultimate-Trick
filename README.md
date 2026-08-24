@@ -1479,11 +1479,6 @@ permissions:
 
 ### محتوای پایه
 
-این سند بر اساس PDF ارائه‌شده با عنوان **GitHub Ultimate Tricks and Tips Cheatsheet FA** تهیه شده است. PDF شامل ترفندهای URL، میانبرها، Search، Repository، Pull Request، GitHub Actions، Secrets، Pages و ابزارهای AI است. fileciteturn0file0L2-L20
-
-بخش‌های Search، Repository، AI و Pull Request نیز از محتوای همان PDF استخراج و توسعه داده شده‌اند. fileciteturn0file0L48-L82 fileciteturn0file0L85-L122
-
-بخش GitHub Actions، Secrets، Pages و `.gitignore` نیز بر اساس محتوای PDF پایه‌گذاری شده است. fileciteturn0file0L125-L138
 
 ### مستندات رسمی GitHub
 
@@ -1506,16 +1501,3 @@ permissions:
 
 ---
 
-<div dir="rtl">
-
-## نکته نهایی
-
-این فایل عمداً فقط یک Cheatsheet ساده نیست. محتوای PDF اولیه حفظ شده و در کنار آن، قابلیت‌هایی که برای **مدیریت حرفه‌ای Repository، کار تیمی، Code Review، CI/CD و Security** اهمیت بیشتری دارند نیز اضافه شده‌اند.
-
-برای پروژه‌ای مانند `library-management-advance`، مهم‌ترین قسمت‌هایی که بهتر است واقعاً استفاده شوند عبارت‌اند از:
-
-**Issues → Milestones → Projects → Branches → Commits → Pull Requests → Code Review → GitHub Actions → Rulesets → Security**
-
-این زنجیره، GitHub را از یک محل صرفاً برای نگهداری کد به یک سیستم کامل برای مدیریت چرخه توسعه نرم‌افزار تبدیل می‌کند.
-
-</div>
