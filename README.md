@@ -1,270 +1,1525 @@
-GitHub ﺑﺮﮔﻪ ﺗﻘﻠﺐ ﺟﺎﻣﻊ ﺗﺮﻓﻨﺪﻫﺎ و ﻧﮑﺎت![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAAAGCAYAAAACLxysAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAG9JREFUeJzt2rENAkEMRcF3iK5ohaaoiwaogIQe7khOaCEiW5BmItvRDy3LBQAAf2AZ6sNHDwAAs63VVnXcB0t1rk5zcwEAwMtaXapbw+Jada3u83IBAMCbtXrsR9ZtfA3wJgAAwC/aZgcAAICvPQEleQqkbbu/YQAAAABJRU5ErkJggg==)
+<div dir="rtl">
 
-۴۰ ﺗﺮﻓﻨﺪ ﮐﺎرﺑﺮدی ﺑﺮای ﺗﻮﺳﻌﻪدﻫﻨﺪﮔﺎن
+# راهنمای جامع GitHub — ترفندها، ابزارها و Workflow حرفه‌ای
 
-**Insta: @DrMirdehghan![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAAAGCAYAAAACLxysAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAJ5JREFUeJzt2rERgzAQRNFdRDeiFMekLkVQhYugBQVugjIoQZwDcO5M45n/Kvjhzc5JAAAAwB+wJEWE13VNx3Gk3kEAAACAJE3TdNZaz23bmr6H67Isg6SX7WfvQAAAAEDXuNpsP0opb0kxStK+7845J0lj70AAAADg5tbaEBGyfS2uut8F5nke+rYBAAAAl5xzlFLCdvRuAQAAAH72AQdkKwoXzgyLAAAAAElFTkSuQmCC)**
+این سند بر اساس فایل PDF ارائه‌شده تهیه شده و اطلاعات آن را حفظ می‌کند؛ سپس بخش‌های تکمیلی برای استفاده در پروژه‌های واقعی تیمی به آن افزوده شده است.
 
-ﺗﺮﻓﻨﺪﻫﺎی URL و وب
+> **راهنمای خواندن:** متن فارسی از راست به چپ (`RTL`) نوشته شده است. عبارت‌های انگلیسی، مسیرها، دستورها و کدها در بخش‌های چپ به راست (`LTR`) قرار گرفته‌اند تا خوانایی حفظ شود.
 
-GitHub.dev
+</div>
 
-ﻫﺮ ﻣﺨﺰن را ﻣﺴﺘﻘﯿﻤﺎ در ﯾﮏ وﯾﺮاﯾﺸﮕﺮ ﺗﺤﺖ ﻣﺮورﮔﺮ ﺷﺒﯿﻪ VS Code ﺑﺎز ﮐﻨﯿﺪ.
+---
 
-github.dev/USER/REPO![ref1]
+## 1. ترفندهای URL و Web
 
-Gitingest
+<div dir="rtl">
 
-ﯾﮏ ﻣﺨﺰن را ﺑﻪ ﻣﺤﺘﻮای ﻣﺘﻨﯽ ﻣﻨﺎﺳﺐ ﺑﺮای اﺳﺘﻔﺎده در ChatGPT، Claude و ﺳﺎﯾﺮ اﺑﺰارﻫﺎی ﻫﻮش ﻣﺼﻨﻮﻋﯽ ﺗﺒﺪﯾﻞ ﮐﻨﯿﺪ.
+### GitHub.dev
 
-gitingest.com/USER/REPO![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAutJREFUeJzt2k9qHEcUwOFXrRmBZsBJkNAFjE2shbXQTjdIVt60zuBj6AA+QK4Q5g4GL7zUH3QALWQIyWKyGokBTVdlEUuIBAIGh+bh71t1v4bmLX8UFQEAAAmUfw5OT0+7g4OD0vf9KAsBAPBtWywW0fd9LaW0p/PHcG2tdZeXl8+HYfh5a2vroLU2GWVTAAC+Wa21iIi7UsqH9Xr9/vj4+M+Hb4/henFx8aK1ttjd3X09m81KKf86jAUAgP9drTWWy+X9arX6dXt7++3h4eFtRMQkPp+2np+fv9nb23u9v78vWgEAGNV8Pp9eX1//dHd396q1dlZKaV38fY+gtNZezudz0QoAwOi6roudnZ1nk8nk2eMsIqLv++i6rht1OwAAeKKUUmqtj40qVgEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIIUuImKxWERrbV1rHXsfAACIiIha6xARm4f3LiKi7/vaWvu4XC434hUAgLGt1+u2Wq3+KKX8/jArDw9XV1c/3N/fv5tOp29ms9n3rhEAADCGWuvm9vb20zAM746Ojn4ppdR4Gq6ttXJ2drYTET9GxHfT6bT85x8BAOAr22w2MQzDUGv97ebm5vrk5GQYeycAAPgifwEExJlhMw209AAAAABJRU5ErkJggg==)
+با فشردن کلید `.` در یک Repository، می‌توان آن را در ویرایشگر تحت مرورگر مشابه VS Code باز کرد.
 
-سرور MCP ﮔﯿﺖﻫﺎب
+</div>
 
-ﻋﺎﻣﻞﻫﺎی ﻫﻮش ﻣﺼﻨﻮﻋﯽ ﺳﺎزﮔﺎر را ﺑﻪ ﻣﺨﺰنﻫﺎ، Issueﻫﺎ، Pull Requestﻫﺎ و ﺳﺎﯾﺮ ﺑﺨﺶﻫﺎی ﮔﯿﺖﻫﺎب ﻣﺘﺼﻞ ﮐﻨﯿﺪ.
+```text
+https://github.dev/USER/REPO
+```
 
-github.com/github/github-mcp-server![ref1]
+<div dir="rtl">
 
-(Raw File) ﻓﺎﯾﻞ ﺧﺎم
+### Gitingest
 
-ﻣﺤﺘﻮای اﺻﻠﯽ ﻓﺎﯾﻞ را ﺑﺪون ﻗﺎﻟﺐﺑﻨﺪی ﺻﻔﺤﻪ وب ﮔﯿﺖﻫﺎب ﻣﺸﺎﻫﺪه ﮐﻨﯿﺪ.
+یک Repository را به محتوای متنی ساختاریافته تبدیل می‌کند تا بتوان از آن برای دادن context به ابزارهای هوش مصنوعی استفاده کرد.
 
-File → Raw![ref2]
+</div>
 
-(Permalink) ﭘﯿﻮﻧﺪ داﺋﻤﯽ
+```text
+https://gitingest.com/USER/REPO
+```
 
-ﯾﮏ ﭘﯿﻮﻧﺪ داﺋﻤﯽ ﺑﻪ ﻧﺴﺨﻪ ﻣﺸﺨصی از ﯾﮏ ﻓﺎﯾﻞ ﺑﺴﺎزﯾﺪ.
+<div dir="rtl">
 
-Press Y![ref3]
+### GitHub MCP Server
 
-(Compare) ﻣﻘﺎﯾﺴﻪ
+برای اتصال Agentهای هوش مصنوعی سازگار به Repositoryها، Issueها، Pull Requestها و سایر منابع GitHub استفاده می‌شود.
 
-ﺷﺎﺧﻪﻫﺎ، ﺑﺮﭼﺴﺐﻫﺎ ﯾﺎ Commitﻫﺎ را ﺑﺎ ﯾﮑﺪﯾﮕﺮ ﻣﻘﺎﯾﺴﻪ و ﺗﻐﯿﯿﺮات را ﺑﺮرسی ﮐﻨﯿﺪ.
+</div>
 
-github.com/USER/REPO/compare![ref2]![ref4]
+```text
+https://github.com/github/github-mcp-server
+```
 
-ﻣﯿﺎﻧﺒﺮﻫﺎی ضروری ﺻﻔﺤﻪﮐﻠﯿﺪ
+<div dir="rtl">
 
-ﮐﻠﯿﺪ ﻧﻘﻄﻪ - وﯾﺮاﯾﺸﮕﺮ ﻣﺮورﮔﺮ
+### مشاهده فایل Raw
 
-ﻣﺨﺰن ﻓﻌﻠﯽ را در GitHub.dev ﺑﺎز ﮐﻨﯿﺪ.
+برای مشاهده محتوای خام یک فایل، از گزینه `Raw` استفاده کنید.
 
-Press .![ref2]
+</div>
 
-ﮐﻠﯿﺪ T - ﺟﺴﺖوﺟﻮی ﻓﺎﯾﻞ
+```text
+File → Raw
+```
 
-ﻓﺎﯾﻞﻫﺎی داﺧﻞ ﯾﮏ ﻣﺨﺰن را ﺑﻪ سرﻋﺖ ﭘﯿﺪا ﮐﻨﯿﺪ.
+<div dir="rtl">
 
-Press T![ref3]
+### Permalink
 
-ﮐﻠﯿﺪ L - رﻓﺘﻦ ﺑﻪ ﺧﻂ
+برای ارجاع دادن به نسخه مشخصی از یک فایل، از Permalink استفاده کنید. این کار برای Review، مستندسازی و ارجاع دقیق به کد بسیار مفید است.
 
-ﻣﺴﺘﻘﯿﻤﺎ ﺑﻪ ﺷﻤﺎره ﺧﻂ ﻣﺸﺨصی ﺑﺮوﯾﺪ.
+با فشردن کلید زیر نیز می‌توان URL مربوط به نسخه مشخص فعلی را ایجاد کرد:
 
-Press L![ref2]
+</div>
 
-Git Blame ﻣﺸﺎﻫﺪه - B ﮐﻠﯿﺪ
+```text
+Y
+```
 
-ﺑﺒﯿﻨﯿﺪ ﻫﺮ ﺧﻂ ﺗﻮﺳﻂ ﮐﺪام Commit و ﻣﺸﺎرﮐﺖﮐﻨﻨﺪه ﺗﻐﯿﯿﺮ ﮐﺮده اﺳﺖ.
+<div dir="rtl">
 
-Press B![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABICAYAAAA3fXewAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAu1JREFUeJzt2j9qXFcUwOFzn2YEmgHHQUIbCDaOCqtQpx04lZunNXgZWoAXkC2E2YMhRUr9QQtQoUCIi3E1EgOad2+KWEIk4MrhceLvq947Dx6n/HG5EQAAkED55+D09LQ7ODgofd+PshAAAN+2xWIRfd/XUkp7On8M19Zad3l5+cMwDD9tbW0dtNYmo2wKAMA3q7UWEXFXSvl1vV5/OD4+/vTw7TFcLy4uXrTWFru7u69ns1kp5V+HsQAA8J+rtcZyubxfrVa/bG9vvzs8PLyNiJjE59PW8/Pzt3t7e6/39/dFKwAAo5rP59Pr6+s3d3d3P7bWzkoprYu/7xGU1trL+XwuWgEAGF3XdbGzs/NsMpk8e5xFRPR9H13XdaNuBwAAT5RSSq31sVHFKgAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApNBFRCwWi2itrWutY+8DAAAREVFrHSJi8/DeRUT0fV9ba78tl8uNeAUAYGzr9bqtVquPpZQ/H2bl4eHq6ur7+/v799Pp9O1sNnvuGgEAAGOotW5ub29/H4bh/dHR0c+llBpPw7W1Vs7OznYi4lVEfDedTssX/wgAAF/ZZrOJYRiGWusfNzc31ycnJ8PYOwEAAAAA/P/8BQZAmWENnP+WAAAAAElFTkSuQmCC)
+### Compare
 
-ﮐﻠﯿﺪ W - ﺗﻌﻮﯾﺾ ﺷﺎﺧﻪ ﯾﺎ ﺑﺮﭼﺴﺐ
+برای مقایسه Branch، Tag یا Commit با یکدیگر:
 
-ﺑﻪ سرﻋﺖ ﺑﯿﻦ Branchﻫﺎ و Tagﻫﺎ ﺟﺎﺑﻪﺟﺎ ﺷﻮﯾﺪ.
+</div>
 
-Press W![ref1]
+```text
+https://github.com/USER/REPO/compare
+```
 
-ﮐﻠﯿﺪ / - ﺟﺴﺖوﺟﻮ
+---
 
-ﮐﺎدر ﺟﺴﺖوﺟﻮی ﮔﯿﺖﻫﺎب را ﻓﻌﺎل ﮐﻨﯿﺪ.
+## 2. میانبرهای مهم GitHub
 
-Press /![ref2]
+<div dir="rtl">
 
-ﮐﻠﯿﺪ ؟ - راﻫﻨﻤﺎی ﻣﯿﺎﻧﺒﺮﻫﺎ
+| میانبر | کاربرد |
+|---|---|
+| `.` | باز کردن Repository در GitHub.dev |
+| `T` | جستجوی سریع فایل‌ها |
+| `L` | رفتن مستقیم به یک شماره خط |
+| `B` | مشاهده Git Blame |
+| `W` | جابه‌جایی سریع بین Branch یا Tag |
+| `/` | فعال کردن Search |
+| `?` | نمایش Keyboard Shortcuts |
 
-ﻣﯿﺎﻧﺒﺮﻫﺎی ﻣﻮﺟﻮد در ﻧﻤﺎی ﻓﻌﻠﯽ ﮔﯿﺖﻫﺎب را ﻣﺸﺎﻫﺪه ﮐﻨﯿﺪ.
+### Git Blame
 
-Press ?![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAu1JREFUeJzt2r1KXkkYwPFnJuf44ge4BqwsJFuaBQuFvQZht9jCXEIuIJDeIleRS7BPk8bK0nKLrGxhs4IsIn5sFo4nkyavsVm75fXB36+bmXPgKf8MEwEAAAmU+4vWWjk6Ourm5+fLyclJ+e/fAADg/7G+vt42NjbGiPhSSmnT/bs4PT4+nlxcXPzadd3bWutPtdZnM5sWAIAnq7X2z+3t7cdxHN9tb2//Po3X7tt5ubq6+nkymbxfW1tb6ft+ttMCAPBktdYm19fXr05PT18cHh7+FhF/xTRc9/f3a2vtl9XV1ZWFhYUoxSsBAABmZ25urlxeXr6MiB9ba6ellFYjInZ3d6OU8rzve9EKAMCj0Pf9pNY6ma7rvTPFCgDAo1FKiXEc7xq1Pvw5AAA8DsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBTuwrW1NttJAADgAdNwbbXWv4dhaAIWAIBZa63FMAz/RsTn6V73/ax9ODs7e933/fLi4mKUUmY3KQAAT9Y4jnF+ft5ubm6OW2t/Trv0rk4PDg66paWl3Vrrm4j4obXm/SsAALNwW0r51HXd283NzT8iosX9cI2I2Nvbqzs7Oyu11uXiyhUAgBkYhmHs+/5sa2vrcynFO1YAAHL5CiQgg5Hxnt+zAAAAAElFTkSuQmCC)![ref5]
+با `B` می‌توان بررسی کرد هر خط از فایل توسط کدام Commit و Contributor تغییر داده شده است.
 
-ﺗﺮﻓﻨﺪﻫﺎی ﻗﺪرﺗﻤﻨﺪ ﺟﺴﺖوﺟﻮ
+</div>
 
-ﻋﻤﻠﮕﺮ repo: - ﺟﺴﺖوﺟﻮ در ﻣﺨﺰن
+---
 
-ﻧﺘﺎﯾﺞ ﺟﺴﺖوﺟﻮ را ﺑﻪ ﯾﮏ ﻣﺨﺰن ﻣﺸﺨﺺ ﻣﺤﺪود ﮐﻨﯿﺪ.
+## 3. جستجوی حرفه‌ای در GitHub
 
-repo:facebook/react useState![ref3]
+<div dir="rtl">
 
-ﻋﻤﻠﮕﺮ language: - ﻓﯿﻠﺘﺮ زﺑﺎن
+GitHub از Search Qualifierها برای محدود کردن نتایج جستجو پشتیبانی می‌کند.
 
-ﮐﺪﻫﺎی ﻧﻮﺷﺘﻪﺷﺪه ﺑﺎ ﯾﮏ زﺑﺎن ﺑﺮﻧﺎﻣﻪﻧﻮﯾسی ﻣﺸﺨﺺ را ﺟﺴﺖوﺟﻮ ﮐﻨﯿﺪ.
+### جستجو در یک Repository مشخص
 
-language:javascript fetch![ref2]
+</div>
 
-ﻋﻤﻠﮕﺮ filename: - ﺟﺴﺖوﺟﻮی ﻓﺎﯾﻞ
+```text
+repo:facebook/react useState
+```
 
-ﻓﺎﯾﻞﻫﺎﯾﯽ ﺑﺎ ﻧﺎم ﻣﺸﺨﺺ را ﭘﯿﺪا ﮐﻨﯿﺪ.
+<div dir="rtl">
 
-filename:package.json![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABICAYAAAA3fXewAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAu1JREFUeJzt2ktqHFcUgOFzS61XNzgOEtpASEg0sAaaaQf2yJPSGrwMLcALyBZC7yEQRIZ6rEADBUIy6IxaosFd93oQS4gYPLIpTvx9o6pTUJzhz+VGAABAAuW/g7Ozs+7w8LD0fT/KQgAAfN3m83n0fV9LKe3p/DFcW2vd9fX1d8MwvNrY2DhsrU1G2RQAgK9Way0i4r6U8ttqtfr15OTkn4dvj+F6dXX1fWttvre392I6nZZSPjqMBQCAL67WGovF4t1yufxla2vrzdHR0V1ExCQ+nLZeXl6+3t/ff3FwcCBaAQAY1Ww227y5uXl5f3//U2vtopTSuvj3HkFprf0wm81EKwAAo+u6LnZ3d59NJpNnj7OIiL7vo+u6btTtAADgiVJKqbU+NqpYBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFLqIiPl8Hq21Va117H0AACAiImqtQ0SsH967iIi+72tr7ffFYrEWrwAAjG21WrXlcvl3KeWvh1l5eDg/P/92Z2fn7fb29uvpdPrcNQIAAMZQa13f3d39MQzD2+Pj459LKTWehmtrrVxcXOxGxI8R8c3m5mb55B8BAOAzW6/XMQzDUGv98/b29ub09HQYeycAAAAAgP+f93vllmHXgszyAAAAAElFTkSuQmCC)
+### فیلتر بر اساس زبان
 
-ﻋﻤﻠﮕﺮ path: - ﻓﯿﻠﺘﺮ ﻣﺴﯿﺮ
+</div>
 
-در ﯾﮏ ﭘﻮﺷﻪ ﯾﺎ ﻣﺴﯿﺮ ﻣﺸﺨﺺ ﺟﺴﺖوﺟﻮ ﮐﻨﯿﺪ.
+```text
+language:javascript fetch
+```
 
-path:src/components![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAutJREFUeJzt27FKHVkYwPHvnNGVCypuIYl9ioUETGG3jdZba5NHSBPIG+QB8gwpAltMtZBHSCMiWlncrexSBuXuFb3OSeOVEDaQJrl8+PtVc84Mh6/8M8xEAABAAmV+0VorEVEPDw+fd133tNbaLXY0AAAeqP+6rvs4Ho8/HRwc3M4378P15ORkYxiGtysrKy+6rqullPLdowAA4CcZhqHd3NxcXl9fvyql/L2zs3MTEbEUd29bT09P/1pbW3uxtbX12/Ly8qLnBQDggWqtxXQ6/f38/PzNbDY7bK2NSymtRkT0fV9ba39ubGyIVgAAFqqUEqPRKFZXVx9HxNZ8v0ZE7O/vR0Ss1FoXOSMAANy7++dq6X692HEAAODHCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkUCMi+r6PiBgWPQwAAMy1O/N1jYg4OztrrbV/J5PJ8NU9AABYiNvb27i6urrouu7zfK/ML46Pj5/UWv9ZX1//YzQalVp9RQAAwK/VWothGOLi4mKYTqfvu657ub29PYmvw7W1Vo6Ojh7VWl+XUp5FxNJCpwYA4EFqrU0i4sPl5eW7vb292Xy/fPNQ6fu+bm5ulv89BQAAfoHd3d2hlNIiwnesAADk8gWGG43RZ4BcMQAAAABJRU5ErkJggg==)
+<div dir="rtl">
 
-ﺟﺴﺖوﺟﻮی ﻋﺒﺎرت دﻗﯿﻖ
+### جستجوی فایل با نام مشخص
 
-ﺑﻪﺟﺎی ﺟﺴﺖوﺟﻮی ﺟﺪاﮔﺎﻧﻪ ﮐﻠﻤﺎت، ﯾﮏ ﻋﺒﺎرت دﻗﯿﻖ را ﭘﯿﺪا ﮐﻨﯿﺪ.
+</div>
 
-"authentication failed"![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAu9JREFUeJzt2L9ObFUUwOG1DwMCIWBoqLUwV9RQ0fAItmZewMYYH8FimPfQ2oLO2NkaK2BewIJObQx/rxziOctCx9yYmNh4xxW+rzl775PsrPKXHQEAAAW05SIzu4uLi7cy87PW2nsRMVntaAAAPDettYyIl5n57dPT0xcnJye//vVv+T0/P3+767qvd3d3X2xvb3ettX++EQAA/iPjOObNzc3w8PDw1cbGxqdHR0cPsXxVPT09ba21j/b39989ODhoohUAgBVqe3t7k6urqw/7vn+RmZettewiIg4PD1tmvrOzsyNaAQBYubW1tdjc3NwdhuHN5VkXETGdTqPrOsUKAMD/RvvTct+tdhwAAPh3hCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABK6CIizs7OIiL6cRxXPQ8AAERExDiOQ0T8ttxPIiKm0+l4eXn5/fX19cdbW1tvTCaTlQ4JAMDzlZnx+PiY9/f3P7bWflqeTyIiWmu5WCy+ub29/bLv+0/W19fbSqcFAODZyszo+/6XYRg+v7u7+6G1lhERrwZqy8y2WCw+yMz3M9OzKwAAr1XXdTkMw8vM/O74+PjnZbTG38I14o/CbfP5vM1ms9c+KAAAzOfzmM1m+Wq0AgBAGb8Dev+WE0dRBu4AAAAASUVORK5CYII=)
+```text
+filename:package.json
+```
 
-ﺟﺴﺖوﺟﻮی ﮐﺪ ﮔﯿﺖﻫﺎب
+<div dir="rtl">
 
-در ﮐﺪﻫﺎ، ﻣﺨﺰنﻫﺎ، Issueﻫﺎ و ﺳﺎﯾﺮ ﻣﺤﺘﻮای ﮔﯿﺖﻫﺎب ﺟﺴﺖوﺟﻮ ﮐﻨﯿﺪ.
+### جستجو در یک مسیر مشخص
 
-github.com/search![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAu1JREFUeJzt2r1KXkkYwPFnJuf44ge4BqwsJFuaBQuFvQZht9jCXEIuIJDeIleRS7BPk8bK0nKLrGxhs4IsIn5sFo4nkyavsVm75fXB36+bmXPgKf8MEwEAAAmU+4vWWjk6Ourm5+fLyclJ+e/fAADg/7G+vt42NjbGiPhSSmnT/bs4PT4+nlxcXPzadd3bWutPtdZnM5sWAIAnq7X2z+3t7cdxHN9tb2//Po3X7tt5ubq6+nkymbxfW1tb6ft+ttMCAPBktdYm19fXr05PT18cHh7+FhF/xTRc9/f3a2vtl9XV1ZWFhYUoxSsBAABmZ25urlxeXr6MiB9ba6ellFYjInZ3d6OU8rzve9EKAMCj0Pf9pNY6ma7rvTPFCgDAo1FKiXEc7xq1Pvw5AAA8DsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBTuwrW1NttJAADgAdNwbbXWv4dhaAIWAIBZa63FMAz/RsTn6V73/ax9ODs7e933/fLi4mKUUmY3KQAAT9Y4jnF+ft5ubm6OW2t/Trv0rk4PDg66paWl3Vrrm4j4obXm/SsAALNwW0r51HXd283NzT8iosX9cI2I2Nvbqzs7Oyu11uXiyhUAgBkYhmHs+/5sa2vrcynFO1YAAHL5CiQgg5Hxnt+zAAAAAElFTkSuQmCC)![ref5]
+</div>
 
-اﺑﺰارﻫﺎی ﻫﻮش ﻣﺼﻨﻮﻋﯽ و ﺗﻮﺳﻌﻪدﻫﻨﺪﮔﺎن
+```text
+path:src/components
+```
 
-ﺑﻪﻫﻤﺮاه ﻫﻮش ﻣﺼﻨﻮﻋﯽ Gitingest
+<div dir="rtl">
 
-ﯾﮏ ﻣﺨﺰن ﮐﺎﻣﻞ را ﺑﻪ ﻣﺤﺘﻮاﯾﯽ ﺳﺎﺧﺘﺎرﯾﺎﻓﺘﻪ ﺑﺮای دﺳﺘﯿﺎر ﮐﺪﻧﻮﯾسی ﻫﻮش ﻣﺼﻨﻮﻋﯽ ﺗﺒﺪﯾﻞ ﮐﻨﯿﺪ.
+### جستجوی عبارت دقیق
 
-gitingest.com![ref3]
+</div>
 
-سرور MCP ﮔﯿﺖﻫﺎب
+```text
+"authentication failed"
+```
 
-از ﻃﺮﯾﻖ MCP ﺑﻪ ﻋﺎﻣﻞﻫﺎی ﻫﻮش ﻣﺼﻨﻮﻋﯽ ﺳﺎزﮔﺎر اﺟﺎزه دﺳﺘﺮسی ﺑﻪ ﻣﻨﺎﺑﻊ ﮔﯿﺖﻫﺎب را ﺑﺪﻫﯿﺪ.
+<div dir="rtl">
 
-github.com/github/github-mcp-server![ref2]
+### جستجوی Issue و Pull Request
 
-GitHub Copilot
+برای Issue و PR نیز می‌توان از Filterها استفاده کرد. نمونه‌های کاربردی:
 
-ﭘﯿﺸﻨﻬﺎد ﮐﺪ، ﺗﻮﺿﯿﺢ و ﮐﻤﮏ ﺗﻮﺳﻌﻪای ﻣﺒﺘﻨﯽ ﺑﺮ ﻫﻮش ﻣﺼﻨﻮﻋﯽ درﯾﺎﻓﺖ ﮐﻨﯿﺪ.
+</div>
 
-github.com/features/copilot![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABICAYAAAA3fXewAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAu1JREFUeJzt2ktqHFcUgOFzS61XNzgOEtpASEg0sAaaaQf2yJPSGrwMLcALyBZC7yEQRIZ6rEADBUIy6IxaosFd93oQS4gYPLIpTvx9o6pTUJzhz+VGAABAAuW/g7Ozs+7w8LD0fT/KQgAAfN3m83n0fV9LKe3p/DFcW2vd9fX1d8MwvNrY2DhsrU1G2RQAgK9Way0i4r6U8ttqtfr15OTkn4dvj+F6dXX1fWttvre392I6nZZSPjqMBQCAL67WGovF4t1yufxla2vrzdHR0V1ExCQ+nLZeXl6+3t/ff3FwcCBaAQAY1Ww227y5uXl5f3//U2vtopTSuvj3HkFprf0wm81EKwAAo+u6LnZ3d59NJpNnj7OIiL7vo+u6btTtAADgiVJKqbU+NqpYBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFLqIiPl8Hq21Va117H0AACAiImqtQ0SsH967iIi+72tr7ffFYrEWrwAAjG21WrXlcvl3KeWvh1l5eDg/P/92Z2fn7fb29uvpdPrcNQIAAMZQa13f3d39MQzD2+Pj459LKTWehmtrrVxcXOxGxI8R8c3m5mb55B8BAOAzW6/XMQzDUGv98/b29ub09HQYeycAAAAAgP+f93vllmHXgszyAAAAAElFTkSuQmCC)
+```text
+is:issue state:open
+is:pr state:open
+assignee:USERNAME
+author:USERNAME
+label:"bug"
+no:assignee
+linked:pr
+```
 
-GitHub Models
+<div dir="rtl">
 
-ﻣﺪلﻫﺎی ﻫﻮش ﻣﺼﻨﻮﻋﯽ ﻣﻮﺟﻮد در اﮐﻮﺳﯿﺴﺘﻢ ﮔﯿﺖﻫﺎب را ﺑﺮرسی و آزﻣﺎﯾﺶ ﮐﻨﯿﺪ.
+برای پروژه‌های تیمی، استفاده از Filterها باعث می‌شود Issueهای بدون مسئول، Bugها، PRهای باز و کارهای عقب‌افتاده سریع‌تر پیدا شوند.
 
-github.com/marketplace/models![ref1]
+</div>
 
-اﻧﺘﻘﺎل زﻣﯿﻨﻪ ﻣﺨﺰن ﺑﻪ ﻫﻮش ﻣﺼﻨﻮﻋﯽ
+---
 
-ﺳﺎﺧﺘﺎر ﭘﺮوژه و ﻣﺤﺘﻮای ﮐﺪ را در اﺧﺘﯿﺎر ﻫﻮش ﻣﺼﻨﻮﻋﯽ ﻗﺮار دﻫﯿﺪ ﺗﺎ ﮐﻤﮏ ﮐﺪﻧﻮﯾسی ﻣﺮﺗﺒﻂﺗﺮی درﯾﺎﻓﺖ ﮐﻨﯿﺪ.
+## 4. Repository
 
-Use Gitingest or MCP![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAvZJREFUeJzt2L1uY0UUwPEz107Ih5RQROnZAi1ZiVRp8gi0yC9AgxCPQOH4PaCmSIfoaBFNlKRIS5EOaFA+l9jh+lDserVCQqJhzVF+v+bOzJVGp/xrIgAAoIC2WGRmd3p6+kFmftlaexERw+WOBgDAU9Nay4h4mZk/zGazrw8PD/9482/xvbi4ePb4+Pjd1tbW842Nja619s83AgDAf2Q+n+f19XV/f3//7erq6hf7+/v3sXhVPTo6arPZ7NOdnZ2Pdnd3m2gFAGCJ2vb29vDy8vKT6XT6PDPPWmvZRUTs7e21zPxwc3NTtAIAsHSDwSDW1ta2+r5/f3HWRUSMRqPouk6xAgDwv9FeW+y75Y4DAAD/jnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACV1ExPHxcUTEdD6fL3seAACIiIj5fN5HxJ+L/TAiYjQazc/Ozn66urr6bH19/b3hcLjUIQEAeLoyMx4eHvLu7u6X1tqvi/NhRERrLc/Pz7+/ubn5Zjqdfr6ystKWOi0AAE9WZsZ0Ov297/uvbm9vf26tZUTE24HaMrOdnJx8PBgMXmSmZ1cAAN6pruuy7/uXmfnjwcHBb4tojb+Fa8Srwm2TyaSNx+N3PigAAEwmkxiPx/l2tAIAQBl/AUFgmP7maSMiAAAAAElFTkSuQmCC)![ref4]
+<div dir="rtl">
 
-ﺗﺮﻓﻨﺪﻫﺎی ﻣﺨﺰن
+### Fork
 
-Fork
+یک کپی از Repository شخص دیگر در حساب خود ایجاد می‌کند و معمولاً برای مشارکت در پروژه‌هایی که دسترسی مستقیم به آن‌ها ندارید استفاده می‌شود.
 
-ﺑﺮای ﺗﻮﺳﻌﻪ ﯾﺎ ﻣﺸﺎرﮐﺖ، ﯾﮏ ﮐﭙﯽ ﺷﺨصی از ﻣﺨﺰن ﻓﺮد دﯾﮕﺮی اﯾﺠﺎد ﮐﻨﯿﺪ.
+مسیر:
 
-Repository → Fork![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAvZJREFUeJzt2L1uY0UUwPEz107Ih5RQROnZAi1ZiVRp8gi0yC9AgxCPQOH4PaCmSIfoaBFNlKRIS5EOaFA+l9jh+lDserVCQqJhzVF+v+bOzJVGp/xrIgAAoIC2WGRmd3p6+kFmftlaexERw+WOBgDAU9Nay4h4mZk/zGazrw8PD/9482/xvbi4ePb4+Pjd1tbW842Nja619s83AgDAf2Q+n+f19XV/f3//7erq6hf7+/v3sXhVPTo6arPZ7NOdnZ2Pdnd3m2gFAGCJ2vb29vDy8vKT6XT6PDPPWmvZRUTs7e21zPxwc3NTtAIAsHSDwSDW1ta2+r5/f3HWRUSMRqPouk6xAgDwv9FeW+y75Y4DAAD/jnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACV1ExPHxcUTEdD6fL3seAACIiIj5fN5HxJ+L/TAiYjQazc/Ozn66urr6bH19/b3hcLjUIQEAeLoyMx4eHvLu7u6X1tqvi/NhRERrLc/Pz7+/ubn5Zjqdfr6ystKWOi0AAE9WZsZ0Ov297/uvbm9vf26tZUTE24HaMrOdnJx8PBgMXmSmZ1cAAN6pruuy7/uXmfnjwcHBb4tojb+Fa8Srwm2TyaSNx+N3PigAAEwmkxiPx/l2tAIAQBl/AUFgmP7maSMiAAAAAElFTkSuQmCC)
+</div>
 
-Star
+```text
+Repository → Fork
+```
 
-ﯾﮏ ﻣﺨﺰن را ﺑﺮای دﺳﺘﺮسی آﺳﺎن در آﯾﻨﺪه ﺑﻪ ﻓﻬﺮﺳﺖ ﻣﺨﺰنﻫﺎی ﺳﺘﺎرهدار ﺧﻮد اﺿﺎﻓﻪ ﮐﻨﯿﺪ.
+<div dir="rtl">
 
-Repository → Star![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAu1JREFUeJzt2r1KXkkYwPFnJuf44ge4BqwsJFuaBQuFvQZht9jCXEIuIJDeIleRS7BPk8bK0nKLrGxhs4IsIn5sFo4nkyavsVm75fXB36+bmXPgKf8MEwEAAAmU+4vWWjk6Ourm5+fLyclJ+e/fAADg/7G+vt42NjbGiPhSSmnT/bs4PT4+nlxcXPzadd3bWutPtdZnM5sWAIAnq7X2z+3t7cdxHN9tb2//Po3X7tt5ubq6+nkymbxfW1tb6ft+ttMCAPBktdYm19fXr05PT18cHh7+FhF/xTRc9/f3a2vtl9XV1ZWFhYUoxSsBAABmZ25urlxeXr6MiB9ba6ellFYjInZ3d6OU8rzve9EKAMCj0Pf9pNY6ma7rvTPFCgDAo1FKiXEc7xq1Pvw5AAA8DsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBTuwrW1NttJAADgAdNwbbXWv4dhaAIWAIBZa63FMAz/RsTn6V73/ax9ODs7e933/fLi4mKUUmY3KQAAT9Y4jnF+ft5ubm6OW2t/Trv0rk4PDg66paWl3Vrrm4j4obXm/SsAALNwW0r51HXd283NzT8iosX9cI2I2Nvbqzs7Oyu11uXiyhUAgBkYhmHs+/5sa2vrcynFO1YAAHL5CiQgg5Hxnt+zAAAAAElFTkSuQmCC)
+### Star
 
-Watch
+برای ذخیره یک Repository در فهرست موردعلاقه و دسترسی آسان‌تر در آینده استفاده می‌شود.
 
-اﻋلانﻫﺎی ﻣﺮﺑﻮط ﺑﻪ ﻓﻌﺎﻟﯿﺖﻫﺎی ﯾﮏ ﻣﺨﺰن را ﻣﺪﯾﺮﯾﺖ ﮐﻨﯿﺪ.
+</div>
 
-Repository → Watch![ref6]
+```text
+Repository → Star
+```
 
-(Topics) ﻣﻮﺿﻮﻋﺎت
+<div dir="rtl">
 
-ﻣﺨﺰن را دﺳﺘﻪﺑﻨﺪی ﮐﻨﯿﺪ و اﻣﮑﺎن ﭘﯿﺪا ﺷﺪن آن را ﺑﻬﺒﻮد دﻫﯿﺪ.
+### Watch
 
-Repository → About → Topics![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABICAYAAAA3fXewAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAuxJREFUeJzt2k9qHEcUwOFXHY1AM6DYSOgCRpAoIC200w3slTetM+QYOoAP4CuYuYMhCy/1Bx1ACwVCspisRmJA01VeJCNMDF45jJ/1fauu101Tyx9FRQAAQALlv4Ozs7Pu4OCg9H2/lg0BAPC0TafT6Pu+llLap/PHcG2tdVdXVy+GYXhVSvmllPLDWnYKAMCT1VqLiLgvpfy2WCzen5yc/L169xiul5eX+6216c7OzuF4PC6lfHYYCwAA/7taa8xms4f5fP5uc3Pz16Ojo7uIiI3497T14uLi9e7u7uHe3p5oBQBgrSaTyejm5ubl/f39z62181JK6+KfewQlIvYnk4loBQBg7bqui62tre2NjY3tx1lERN/34U4rAADfklJKqbV2q3X35c8BAODbIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQQhcRMZ1Oo7W2qLWuez8AABAREbXWISKWq3UXEdH3fW2tfZjNZkvxCgDAui0Wizafz/8qpfy5mpXVw/X19fOHh4c3o9Ho9Xg8fuYaAQAA61BrXd7d3f0+DMOb4+Pjt6WUGp+Ga2utnJ+fb0XETxHx42g0Kl/8IwAAfGXL5TKGYRhqrX/c3t7enJ6eDuveEwAAAADA9+cjglaTYVsOLgAAAAAASUVORK5CYII=)
+برای مدیریت Notificationهای مربوط به فعالیت‌های یک Repository استفاده می‌شود.
 
-(Releases & Tags) اﻧﺘﺸﺎرﻫﺎ و ﺑﺮﭼﺴﺐﻫﺎ
+</div>
 
-ﻧﺴﺨﻪﻫﺎی ﻣﺸﺨﺺ ﭘﺮوژه ﺧﻮد را ﺳﺎزﻣﺎندﻫﯽ و ﻣﻨﺘشر ﮐﻨﯿﺪ.
+```text
+Repository → Watch
+```
 
-github.com/USER/REPO/releases![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAutJREFUeJzt27FKHVkYwPHvnNGVC4puIYl9ioUETGG3jdZba5NHSBPIG+QB8gwpAltMtZBHSCMiWlncrexSBuXuFb3OSeOVEDaQJrl8+PtVc84Mh6/8M8xEAABAAmV+0VorEVEPDw+fd133tNbaLXY0AAAeqP+6rvs4Ho8/HRwc3M4378P15ORkYxiGtysrKy+6rqullPLdowAA4CcZhqHd3NxcXl9fvyql/L2zs3MTEbEUd29bT09P/1pbW3uxtbX12/Ly8qLnBQDggWqtxXQ6/f38/PzNbDY7bK2NSymtRkT0fV9ba39ubGyIVgAAFqqUEqPRKFZXVx9HxNZ8v0ZE7O/vR0Ss1FoXOSMAANy7++dq6X692HEAAODHCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkUCMi+r6PiBgWPQwAAMy1O/N1jYg4OztrrbV/J5PJ8NU9AABYiNvb27i6urrouu7zfK/ML46Pj5+UUv5ZX1//YzQalVp9RQAAwK/VWothGOLi4mKYTqfvu657ub29PYmvw7W1Vo6Ojh7VWl+XUp5FxNJCpwYA4EFqrU0i4sPl5eW7vb292Xy/fPNQ6fu+bm5ulv89BQAAfoHd3d2hlNIiwnesAADk8gWGD43ReomInAAAAABJRU5ErkJggg==)
+<div dir="rtl">
 
-README.md ﻓﺎﯾﻞ
+### Topics
 
-ﻫﺪف ﭘﺮوژه، روش راهاﻧﺪازی، ﻧﺤﻮه اﺳﺘﻔﺎده، ﻗﺎﺑﻠﯿﺖﻫﺎ و دﺳﺘﻮراﻟﻌﻤﻞﻫﺎی ﻣﺸﺎرﮐﺖ را ﻣﺴﺘﻨﺪ ﮐﻨﯿﺪ.
+برای دسته‌بندی Repository و بهتر پیدا شدن آن در GitHub استفاده می‌شود.
 
-README.md![ref6]![ref4]
+</div>
 
-Pull Request و Git ﺗﺮﻓﻨﺪﻫﺎی
+```text
+Repository → About → Topics
+```
 
-(Feature Branch) ﺷﺎﺧﻪ ﻗﺎﺑﻠﯿﺖ
+<div dir="rtl">
 
-ﯾﮏ ﻗﺎﺑﻠﯿﺖ را ﺑﺪون اﯾﺠﺎد ﺗﻐﯿﯿﺮ ﻣﺴﺘﻘﯿﻢ در ﺷﺎﺧﻪ اﺻﻠﯽ، ﺑﻪﺻﻮرت ﻣﺴﺘﻘﻞ ﺗﻮﺳﻌﻪ دﻫﯿﺪ.
+### Releases و Tags
 
-git switch -c feature/name![ref2]
+برای مشخص کردن نسخه‌های منتشرشده پروژه استفاده می‌شوند.
 
-ﭘﯿﺶﻧﻮﯾﺲ Pull Request
+</div>
 
-ﭘﯿﺶ از ﭘﺎﯾﺎن ﺗﻮﺳﻌﻪ، ﯾﮏ Pull Request اﯾﺠﺎد ﮐﻨﯿﺪ و ﺑﺎزﺧﻮرد اوﻟﯿﻪ ﺑﮕﯿﺮﯾﺪ.
+```text
+https://github.com/USER/REPO/releases
+```
 
-Pull Request → Create draft PR![ref3]
+<div dir="rtl">
 
-(Files Changed) ﻓﺎﯾﻞﻫﺎی ﺗﻐﯿﯿﺮﮐﺮده
+### README.md
 
-ﺗﻤﺎم ﺗﻔﺎوتﻫﺎی ﮐﺪی اﯾﺠﺎدﺷﺪه ﺗﻮﺳﻂ ﯾﮏ Pull Request را ﺑﺮرسی ﮐﻨﯿﺪ.
+README باید حداقل اطلاعاتی مانند موارد زیر را توضیح دهد:
 
-Pull Request → Files changed![ref6]
+- هدف پروژه
+- قابلیت‌ها
+- تکنولوژی‌ها
+- روش نصب و راه‌اندازی
+- Environment Variables
+- نحوه اجرای پروژه
+- نحوه اجرای Testها
+- نحوه مشارکت
+- Branching و Pull Request Workflow
+- License
 
-(Suggested Changes) ﺗﻐﯿﯿﺮات ﭘﯿﺸﻨﻬﺎدی
+</div>
 
-ﺑﻪ ﺑﺎزﺑﯿﻦﻫﺎ اﺟﺎزه دﻫﯿﺪ ﺗﻐﯿﯿﺮات ﻣﺸﺨﺺ ﮐﺪ را ﻣﺴﺘﻘﯿﻤﺎ در Pull Request ﭘﯿﺸﻨﻬﺎد دﻫﻨﺪ.
+---
 
-Pull Request → Review![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABICAYAAAA3fXewAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAutJREFUeJzt2j9qJEcUwOFXrWmBZmBtI6ELGBtbwUqgTDfwRpv0HXwMHUAH8BXM3MHgwKH+oAMoMSzrYByNxICmqzbYlRA2OLJpnvf7ou7X0LzwR1ERAACQQPnr4Pz8vDs6OirDMEyyEAAAn7flchnDMNRSSns5fw7X1lp3c3Pz9TiOb3Z2do5aa7NJNgUA4LPVWouIeCil/LrZbH45Ozv78+nbc7heX19/01pb7u/vv57P56WUvx3GAgDAf67WGqvV6nG9Xv+8u7v74/Hx8X1ExCw+nbZeXV29PTg4eH14eChaAQCY1GKx6O/u7n54eHj4vrV2WUppXXy8R1Baa98uFgvRCgDA5Lqui729vVez2ezV8ywiYhiG6Lqum3Q7AAB4oZRSaq3PjSpWAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAghS4iYrlcRmttU2udeh8AAIiIiFrrGBHbp/cuImIYhtpa+221Wm3FKwAAU9tsNm29Xv9RSnn/NCtPD7e3t189Pj5e9H3/dj6ff+kaAQAAU6i1bu/v738fx/Hi9PT0p1JKjZfh2lorl5eXexHxXUR80fd9+cc/AgDAv2y73cY4jmPf9+9OTk7uSinj1DsBAAAAAPz/fADw8pNhsixdNAAAAABJRU5ErkJggg==)
+## 5. Branch و Git Workflow
 
-(Status Checks) ﺑﺮرسی وﺿﻌﯿﺖ
+<div dir="rtl">
 
-ﭘﯿﺶ از ادﻏﺎم، آزﻣﺎﯾﺶﻫﺎی ﺧﻮدﮐﺎر و ﺑﺮرسیﻫﺎی CI را ﺗﺄﯾﯿﺪ ﮐﻨﯿﺪ.
+برای توسعه یک Feature بهتر است مستقیماً روی `main` کار نشود.
 
-Pull Request → Checks![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAutJREFUeJzt27FKHVkYwPHvnNGVC4puIYl9ioUETGG1lfbbapNHSBPIG+QB8gwpAltMtZBHSCOidhZ3K7uUQbl7Ra9z0nglhA2kSS4f/n7VnDPD4Sv/DDMRAACQQJlftNZKRNTDw8PnXdc9rbV2ix0NAIAH6r+u6z6Ox+NPBwcHt/PN+3A9PT3dGIbh7crKyouu62oppXz3KAAA+EmGYWg3NzeX19fXr0opf+/s7NxERCzF3dvWk5OTv9bW1l5sbW39try8vOh5AQB4oFprMZ1Ofz8/P38zm80OW2vjUkqrERF939dSyp8bGxuiFQCAhSqlxGg0itXV1ccRsTXfrxER+/v7ERErtdZFzggAAPfu/rlaul8vdhwAAPgxwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAAp1IiIvu8jIoZFDwMAAHPtznxdIyLOzs5aa+3fyWQyfHUPAAAW4vb2Nq6uri66rvs83yvzi+Pj4yellH/W19f/GI1GpVZfEQAA8Gu11mIYhri4uBim0+n7rutebm9vT+LrcG2tlaOjo0e11tellGcRsbTQqQEAeJBaa5OI+HB5eflub29vNt8v3zxU+r6vm5ub5X9PAQCAX2B3d3copbSI8B0rAAC5fAGvHorREzbvhQAAAABJRU5ErkJggg==)
+</div>
 
-Squash ادﻏﺎم
+```bash
+git switch main
+git pull origin main
+git switch -c feature/initialize-django-project
+```
 
-ﭼﻨﺪ Commit ﻣﻮﺟﻮد در Pull Request را ﺑﻪ ﯾﮏ Commit ﻣﺮﺗﺐ و واﺣﺪ ﺗﺒﺪﯾﻞ ﮐﻨﯿﺪ.
+<div dir="rtl">
 
-Pull Request → Squash and merge![ref6]![ref4]
+### نام‌گذاری Branch
 
-ﺧﻮدﮐﺎرﺳﺎزی و اﺳﺘﻘﺮار
+پیشنهاد:
 
+</div>
+
+```text
+feature/<name>
+fix/<name>
+bugfix/<name>
+refactor/<name>
+docs/<name>
+test/<name>
+chore/<name>
+```
+
+<div dir="rtl">
+
+برای پروژه‌های تیمی، نام Branch بهتر است با Issue مرتبط باشد.
+
+مثلاً برای Issue شماره `#1`:
+
+</div>
+
+```text
+feature/initialize-django-project-1
+```
+
+---
+
+## 6. Commit حرفه‌ای
+
+<div dir="rtl">
+
+Commit باید کوچک، مشخص و قابل فهم باشد.
+
+پیشنهاد برای Conventional Commits:
+
+</div>
+
+```text
+feat: initialize django project
+fix: handle invalid otp
+docs: add project setup guide
+test: add authentication tests
+refactor: simplify user service
+chore: update dependencies
+ci: add github actions workflow
+```
+
+<div dir="rtl">
+
+### اتصال Commit به Issue
+
+در صورت استفاده صحیح از Reference یا Closing Keyword می‌توان Commit/PR را به Issue مرتبط کرد.
+
+نمونه:
+
+</div>
+
+```text
+Fixes #1
+Closes #1
+Resolves #1
+```
+
+<div dir="rtl">
+
+> برای بستن خودکار Issue بهتر است Closing Keyword در متن Pull Request استفاده شود تا ارتباط تغییر با Issue واضح و قابل Review باشد.
+
+</div>
+
+---
+
+## 7. Pull Request
+
+<div dir="rtl">
+
+Pull Request محل اصلی Code Review و ورود تغییرات به Branch اصلی است.
+
+### Draft Pull Request
+
+قبل از کامل شدن Feature می‌توان یک Draft PR ساخت تا اعضای تیم زودتر بازخورد بدهند.
+
+مسیر:
+
+</div>
+
+```text
+Pull Request → Create draft PR
+```
+
+<div dir="rtl">
+
+### Files changed
+
+برای مشاهده تمام تغییرات ایجادشده در PR:
+
+</div>
+
+```text
+Pull Request → Files changed
+```
+
+<div dir="rtl">
+
+### Suggested Changes
+
+Reviewer می‌تواند تغییر پیشنهادی خود را مستقیماً روی کد پیشنهاد دهد.
+
+مسیر:
+
+</div>
+
+```text
+Pull Request → Review
+```
+
+<div dir="rtl">
+
+### Checks
+
+قبل از Merge باید وضعیت Testها، Lint و سایر CI Checkها بررسی شود.
+
+</div>
+
+```text
+Pull Request → Checks
+```
+
+<div dir="rtl">
+
+### Squash and Merge
+
+چند Commit مربوط به یک Feature را هنگام Merge به یک Commit تمیز تبدیل می‌کند.
+
+</div>
+
+```text
+Pull Request → Squash and merge
+```
+
+<div dir="rtl">
+
+### پیشنهاد Workflow برای تیم
+
+</div>
+
+```text
+Issue
+  ↓
+Create Branch
+  ↓
+Implement
+  ↓
+Commit
+  ↓
+Push
+  ↓
+Pull Request
+  ↓
+CI Checks
+  ↓
+Code Review
+  ↓
+Fix Review Comments
+  ↓
+Approve
+  ↓
+Squash and Merge
+  ↓
+Close Issue
+```
+
+---
+
+## 8. Issue
+
+<div dir="rtl">
+
+Issue فقط برای Bug نیست. می‌توان از آن برای Feature، Task، Documentation، Refactor و سایر کارها استفاده کرد.
+
+یک Issue خوب بهتر است شامل این موارد باشد:
+
+- عنوان مشخص
+- توضیح مسئله
+- هدف
+- Scope
+- Acceptance Criteria
+- مسئول
+- Label
+- Milestone
+- وابستگی‌ها
+- لینک به PR در صورت وجود
+
+### نمونه عنوان
+
+</div>
+
+```text
+Initialize Django Project #1
+```
+
+<div dir="rtl">
+
+### Acceptance Criteria
+
+</div>
+
+```text
+- Django project is created
+- Required apps are initialized
+- Environment configuration is added
+- Project starts successfully
+- README is updated
+```
+
+---
+
+## 9. Labels
+
+<div dir="rtl">
+
+برای مدیریت بهتر Issueها و PRها از Label استفاده کنید.
+
+نمونه:
+
+</div>
+
+```text
+bug
+feature
+documentation
+enhancement
+refactor
+testing
+backend
+frontend
+priority:high
+priority:medium
+priority:low
+good first issue
+help wanted
+```
+
+<div dir="rtl">
+
+بهتر است Labelها از ابتدا استاندارد شوند و اعضای تیم هر بار Label جدید و مشابه ایجاد نکنند.
+
+</div>
+
+---
+
+## 10. Milestones
+
+<div dir="rtl">
+
+Milestone برای گروه‌بندی چند Issue در یک هدف یا نسخه مشخص استفاده می‌شود.
+
+مثلاً:
+
+</div>
+
+```text
+Milestone: v0.1 - Project Initialization
+Milestone: v0.2 - Authentication
+Milestone: v0.3 - Library Management
+Milestone: v1.0 - Production Release
+```
+
+<div dir="rtl">
+
+در یک پروژه آموزشی، Milestone می‌تواند نماینده یک مرحله از پروژه باشد.
+
+</div>
+
+---
+
+## 11. GitHub Projects
+
+<div dir="rtl">
+
+GitHub Projects برای مدیریت Work در سطح تیم استفاده می‌شود.
+
+می‌توان وضعیت‌هایی مانند موارد زیر ایجاد کرد:
+
+</div>
+
+```text
+Backlog
+Todo
+In Progress
+In Review
+Blocked
+Done
+```
+
+<div dir="rtl">
+
+همچنین می‌توان Viewهای مختلف مانند Board و Table ساخت و Issueها و PRها را به Project متصل کرد.
+
+</div>
+
+---
+
+## 12. Repository Permissions و نقش‌ها
+
+<div dir="rtl">
+
+در پروژه‌های تیمی باید Permissionها بر اساس اصل Least Privilege تنظیم شوند.
+
+نقش‌های رایج Repository:
+
+</div>
+
+```text
+Read
+Triage
+Write
+Maintain
+Admin
+```
+
+<div dir="rtl">
+
+برای اعضای معمولی تیم، معمولاً نباید دسترسی `Admin` داده شود. مسئول پروژه می‌تواند Repository و Rules را مدیریت کند و اعضای توسعه‌دهنده با دسترسی مناسب کار کنند.
+
+</div>
+
+---
+
+## 13. Branch Rules و Rulesets
+
+<div dir="rtl">
+
+برای جلوگیری از Push مستقیم و Merge ناخواسته به Branchهای حساس مانند `main`، از Repository Rules / Rulesets استفاده کنید.
+
+قوانین مفید:
+
+- Require a Pull Request
+- Require approvals
+- Require status checks
+- Block force pushes
+- Require code scanning results
+- Restrict branch creation
+- Restrict branch deletion
+
+برای یک پروژه تیمی، یک سیاست مناسب می‌تواند این باشد:
+
+</div>
+
+```text
+main
+ ├── Direct Push: Disabled
+ ├── Pull Request: Required
+ ├── Approval: Required
+ ├── CI Checks: Required
+ └── Force Push: Disabled
+```
+
+---
+
+## 14. GitHub Actions
+
+<div dir="rtl">
+
+GitHub Actions برای خودکارسازی Test، Build، Lint، Security Check و Deployment استفاده می‌شود.
+
+فایل Workflow معمولاً در این مسیر قرار می‌گیرد:
+
+</div>
+
+```text
+.github/workflows/
+```
+
+<div dir="rtl">
+
+نمونه Workflow ساده برای پروژه Python:
+
+</div>
+
+```yaml
+name: Django CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: python manage.py test
+```
+
+<div dir="rtl">
+
+برای پروژه واقعی می‌توان مراحل بیشتری مانند `lint`، `format check`، `security scan`، Docker Build و Deployment اضافه کرد.
+
+</div>
+
+---
+
+## 15. GitHub Secrets
+
+<div dir="rtl">
+
+مقادیر حساس مانند API Key، Password، Token و Credentials نباید در Repository Commit شوند.
+
+Secrets مربوط به GitHub Actions را می‌توان از مسیر زیر مدیریت کرد:
+
+</div>
+
+```text
+Settings → Secrets and variables → Actions
+```
+
+<div dir="rtl">
+
+در Workflow:
+
+</div>
+
+```yaml
+env:
+  API_KEY: ${{ secrets.API_KEY }}
+```
+
+<div dir="rtl">
+
+**هرگز Secret واقعی را در فایل‌هایی مانند موارد زیر Commit نکنید:**
+
+</div>
+
+```text
+.env
+.env.production
+settings.py
+config.json
+docker-compose.override.yml
+```
+
+<div dir="rtl">
+
+از `.gitignore` برای جلوگیری از Commit شدن فایل‌های حساس استفاده کنید.
+
+</div>
+
+```gitignore
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+```
+
+---
+
+## 16. GitHub Pages
+
+<div dir="rtl">
+
+برای میزبانی سایت‌های Static می‌توان از GitHub Pages استفاده کرد.
+
+نمونه آدرس:
+
+</div>
+
+```text
+https://USER.github.io/REPO/
+```
+
+<div dir="rtl">
+
+برای Documentation پروژه‌ها نیز گزینه مناسبی است.
+
+</div>
+
+---
+
+## 17. Security
+
+<div dir="rtl">
+
+GitHub امکانات امنیتی مهمی برای Repository ارائه می‌دهد.
+
+### Dependabot
+
+برای شناسایی Dependencyهای آسیب‌پذیر و ایجاد Pull Request برای به‌روزرسانی آن‌ها استفاده می‌شود.
+
+### Secret Scanning
+
+برای پیدا کردن Secretهای Commit شده در Repository استفاده می‌شود.
+
+### Push Protection
+
+در صورت فعال بودن، می‌تواند قبل از ورود برخی Secretهای شناسایی‌شده به Repository، Push را متوقف کند.
+
+### Code Scanning
+
+برای شناسایی آسیب‌پذیری‌ها و خطاهای کدنویسی استفاده می‌شود.
+
+### Dependency Review
+
+تغییرات Dependencyها را هنگام Pull Request بررسی می‌کند.
+
+</div>
+
+```text
+Security / Code security
+├── Dependabot
+├── Secret scanning
+├── Push protection
+├── Code scanning
+└── Dependency review
+```
+
+<div dir="rtl">
+
+فعال‌سازی دقیق این قابلیت‌ها به نوع Repository و Plan حساب GitHub بستگی دارد.
+
+</div>
+
+---
+
+## 18. Dependabot
+
+<div dir="rtl">
+
+برای پروژه‌های Python می‌توان Dependabot را برای بررسی Dependencyها فعال کرد.
+
+نمونه:
+
+</div>
+
+```yaml
+version: 2
+
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+```
+
+<div dir="rtl">
+
+این قابلیت به‌خصوص برای پروژه‌های Django، FastAPI و سایر پروژه‌های Python مفید است.
+
+</div>
+
+---
+
+## 19. CODEOWNERS
+
+<div dir="rtl">
+
+فایل `CODEOWNERS` مشخص می‌کند چه افرادی یا تیم‌هایی Owner قسمت‌های مختلف Repository هستند و باید در Review تغییرات مربوط به آن قسمت‌ها مشارکت کنند.
+
+مسیرهای رایج:
+
+</div>
+
+```text
+.github/CODEOWNERS
+CODEOWNERS
+docs/CODEOWNERS
+```
+
+<div dir="rtl">
+
+نمونه:
+
+</div>
+
+```text
+# Backend
+/backend/ @backend-team
+
+# Documentation
+/docs/ @maintainers
+
+# GitHub Actions
+/.github/workflows/ @devops-team
+```
+
+---
+
+## 20. Discussions
+
+<div dir="rtl">
+
+GitHub Discussions برای گفت‌وگوهای عمومی‌تر پروژه مناسب است؛ مثلاً:
+
+- سؤال و جواب
+- ایده‌های جدید
+- پیشنهاد Feature
+- Announcement
+- بحث معماری
+- تجربه‌های تیم
+
+برای یک Bug مشخص، Issue معمولاً انتخاب مناسب‌تری است.
+
+</div>
+
+---
+
+## 21. GitHub Releases
+
+<div dir="rtl">
+
+Release برای انتشار نسخه‌های رسمی پروژه استفاده می‌شود.
+
+یک Release معمولاً شامل:
+
+- Version
+- Tag
+- Release Notes
+- تغییرات مهم
+- Bug Fixes
+- Breaking Changes
+- Assets
+
+است.
+
+نمونه Versioning:
+
+</div>
+
+```text
+v1.0.0
+v1.1.0
+v1.1.1
+```
+
+<div dir="rtl">
+
+برای پروژه‌هایی که نسخه‌بندی دارند، استفاده از Semantic Versioning بسیار مفید است.
+
+</div>
+
+---
+
+## 22. GitHub Packages
+
+<div dir="rtl">
+
+GitHub Packages برای انتشار و نگهداری Packageها و Artifactهای پروژه استفاده می‌شود.
+
+برای پروژه‌های Python می‌توان Packageهای داخلی را در Registry مناسب نگهداری کرد.
+
+</div>
+
+---
+
+## 23. GitHub Codespaces
+
+<div dir="rtl">
+
+Codespaces یک محیط توسعه ابری برای کار روی Repository است و می‌تواند برای ایجاد محیط توسعه استاندارد تیمی استفاده شود.
+
+برای پروژه‌های تیمی بزرگ‌تر، تعریف `devcontainer.json` می‌تواند باعث شود محیط توسعه اعضای تیم تا حد زیادی یکسان باشد.
+
+</div>
+
+---
+
+## 24. GitHub Copilot و GitHub Models
+
+<div dir="rtl">
+
+PDF ارائه‌شده ابزارهای هوش مصنوعی GitHub مانند Copilot و GitHub Models را معرفی می‌کند.
+
+### Copilot
+
+برای پیشنهاد کد، توضیح کد و کمک در فرآیند توسعه استفاده می‌شود.
+
+### GitHub Models
+
+برای بررسی و آزمایش مدل‌های هوش مصنوعی موجود در اکوسیستم GitHub استفاده می‌شود.
+
+### نکته مهم
+
+ابزارهای AI باید به عنوان ابزار کمکی استفاده شوند، نه جایگزین Code Review، Test و درک معماری پروژه.
+
+</div>
+
+---
+
+## 25. Gitingest و انتقال Context به AI
+
+<div dir="rtl">
+
+اگر هدف این است که یک AI ساختار پروژه را بهتر درک کند، انتقال Context مناسب اهمیت زیادی دارد.
+
+یک Workflow ساده:
+
+</div>
+
+```text
+GitHub Repository
+       ↓
+Gitingest / MCP
+       ↓
+Project Context
+       ↓
+AI Assistant
+       ↓
+Analysis / Coding / Documentation
+```
+
+<div dir="rtl">
+
+برای پروژه‌های حساس، قبل از ارسال Repository به هر ابزار خارجی باید Secretها، اطلاعات خصوصی و داده‌های حساس بررسی شوند.
+
+</div>
+
+---
+
+## 26. GitHub CLI
+
+<div dir="rtl">
+
+علاوه بر رابط وب، می‌توان بسیاری از عملیات GitHub را با GitHub CLI انجام داد.
+
+</div>
+
+```bash
+gh auth login
+
+gh repo clone OWNER/REPO
+
+gh issue list
+
+gh issue create
+
+gh pr list
+
+gh pr create
+
+gh pr checkout 123
+
+gh pr merge 123
+```
+
+<div dir="rtl">
+
+این ابزار برای توسعه‌دهندگانی که با Terminal راحت هستند بسیار کاربردی است.
+
+</div>
+
+---
+
+## 27. ارتباط Issue و Pull Request
+
+<div dir="rtl">
+
+یک Workflow حرفه‌ای باید ارتباط بین Task، Branch، Commit و PR را قابل ردیابی کند.
+
+مثلاً:
+
+</div>
+
+```text
+Issue #1
+   ↓
+feature/initialize-django-project-1
+   ↓
+Commit
+   ↓
+Pull Request #5
+   ↓
+Review
+   ↓
+Merge
+   ↓
+Issue #1 → Closed
+```
+
+<div dir="rtl">
+
+این ساختار برای مدیریت پروژه تیمی بسیار مهم است، زیرا مشخص می‌کند هر تغییر کد برای چه کاری ایجاد شده است.
+
+</div>
+
+---
+
+## 28. Workflow پیشنهادی برای پروژه تیمی
+
+<div dir="rtl">
+
+برای پروژه‌های Django، DRF، FastAPI و پروژه‌های مشابه، Workflow زیر پیشنهاد می‌شود:
+
+</div>
+
+```text
+Manager creates Issue
+        ↓
+Assign Issue
+        ↓
+Developer creates Branch
+        ↓
+Developer implements Task
+        ↓
+Developer runs local tests
+        ↓
+Commit
+        ↓
+Push
+        ↓
+Open Pull Request
+        ↓
 GitHub Actions
+        ↓
+Code Review
+        ↓
+Changes Requested?
+   ┌────┴────┐
+  Yes        No
+   ↓          ↓
+Fix       Approve
+   ↓          ↓
+Push       Merge
+   └────┬─────┘
+        ↓
+Close Issue
+```
 
-آزﻣﺎﯾﺶ، Build، اﺳﺘﻘﺮار و ﺳﺎﯾﺮ ﮔﺮدشﮐﺎرﻫﺎی ﺗﻮﺳﻌﻪ را ﺧﻮدﮐﺎر ﮐﻨﯿﺪ.
+---
 
-github.com/USER/REPO/actions![ref6]
+## 29. استاندارد پیشنهادی برای Repository آموزشی
 
-GitHub Secrets
+<div dir="rtl">
 
-ﮐﻠﯿﺪﻫﺎی API، Tokenﻫﺎ و ﻣﻘﺎدﯾﺮ ﺣﺴﺎس ﮔﺮدشﮐﺎر را ﺑﻪﺻﻮرت اﻣﻦ ذﺧﯿﺮه ﮐﻨﯿﺪ.
+برای یک پروژه آموزشی تیمی می‌توان Repository را به شکل زیر سازمان‌دهی کرد:
 
-Settings → Secrets and variables → Actions![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAuxJREFUeJzt2r9OHUcUwOE5412uACEHS1QUyClJJAqQ/AxISeECP4L7FPQUfgo/Ar0bN1SUlCkSlIImSMhIiD+xpWUzaXwJjemsyxHf183MrnTKn0ZTCgAAJBD3F621ODo66ubn5+Pk5CS+/RsAAHwfa2trbX19fSyl/BsRbbp/F6fHx8eTi4uLX7uu2621/lxrfTazaQEAeLJaa//c3t5+HMfx3dbW1u/TeO2+nsfV1dWryWTyfnV1dbnv+9lOCwDAk9Vam1xfX785PT19eXh4+LqU8neZhuv+/n5trf2ysrKyvLCwUCK8EgAAYHbm5ubi8vLyp1LKj62104hotZRSdnZ2SkS86PtetAIA8Cj0fT+ptU6m63rvTLECAPBoREQZx/GuUevDnwMAwOMgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBI4S5cW2uznQQAAB4wDddWa/00DEMTsAAAzFprrQzD8KWU8nm61/1/1j6cnZ297fv++eLiYomI2U0KAMCTNY5jOT8/bzc3N8ettb+mXXpXpwcHB93S0tKbiPitlPJDa837VwAAZuE2Iv7oum53Y2Pjz1JKK/fDtZQSe3t7sb29vVxrfR6uXAEAmIFhGMa+7882Nzc/R4R3rAAA5PIfw2uDjgZbvmoAAAAASUVORK5CYII=)
+</div>
 
-GitHub Pages
+```text
+repository/
+├── .github/
+│   ├── workflows/
+│   ├── ISSUE_TEMPLATE/
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── CODEOWNERS
+│
+├── docs/
+│   ├── project-description.md
+│   ├── git-workflow.md
+│   ├── github-guide.md
+│   └── architecture.md
+│
+├── src/
+├── tests/
+├── .gitignore
+├── .env.example
+├── README.md
+└── LICENSE
+```
 
-وبﺳﺎﯾﺖﻫﺎی اﺳﺘﺎﺗﯿﮏ ﭘﺸﺘﯿﺒﺎﻧﯽﺷﺪه را از داﺧﻞ ﯾﮏ ﻣﺨﺰن ﻣﺴﺘﻘﺮ و ﻣﯿﺰﺑﺎﻧﯽ ﮐﻨﯿﺪ.
+<div dir="rtl">
 
-USER.github.io/REPO/![ref6]
+این ساختار برای پروژه‌های کوچک الزام‌آور نیست؛ هدف آن ایجاد یک نقطه شروع منظم برای تیم است.
 
-.gitignore ﻓﺎﯾﻞ
+</div>
 
-از Commit ﺷﺪن ﻓﺎﯾﻞﻫﺎﯾﯽ ﻣﺎﻧﻨﺪ env.، ﭘﻮﺷﻪ node\_modules و ﺳﺎﯾﺮ ﻓﺎﯾﻞﻫﺎی ﻧﺎﺧﻮاﺳﺘﻪ ﺟﻠﻮﮔﯿﺮی ﮐﻨﯿﺪ.
+---
 
-.env![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABbCAYAAACyPweFAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAA3JJREFUeJzt2jFuK1UUgOFzx5Mgx9JrEmUD6BUEKanSZAdQ0cwGaGAPFI4XwgKQW2okJEQTYWcBKC1Q5ClKTGQLZi7Fw1H0kOh45ijf190zU5zy19WNAACABMq7g8vLy+bk5KR0XbeThQAAeNnm83l0XTeUUurz+VO41lqb6+vrD/u+/3Q0Gp3UWtudbAoAwItVa42IeCylfL9er7+7uLh4s/32FK7L5fJ1rXV+eHh4enBwUEr5x2UsAAD854ZhiNvb2z9Wq9U3+/v7X56dnf0eEdHG37eti8Xis6Ojo9Pj42PRCgDATk0mk72bm5tPHh8fP6q1/lRKqU28fUdQIuL1ZDIRrQAA7FzTNDEej1+1bfvqaRYR0XVdlFJGO90OAACeKaWUYRia7bn5998BAOD/QbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACk0ERHz+TwiYjMMw673AQCAiIgYhqGPiD+35zYiouu6YbFY/Hh3d/f5eDz+oG3bnS4JAMDLVWuN9XpdV6vVL6WUX7fzNiKilFKXy+W39/f3X282my/29vbKTrcFAODFqrXGZrN50/f9Vw8PDz+XUmpExPNALbXWcnV1dToajT6utbp2BQDgvWqapvZ9/1hr/eH8/Py3bbTGO+Ea8bZwy2w2K9Pp9L0vCgAAs9ksptNpfR6tAACQxl+qJ6GUscnRZwAAAABJRU5ErkJggg==)
+## 30. Pull Request Template
 
-node\_modules/![ref4]
+<div dir="rtl">
 
-**Insta: @DrMirdehghan**
+برای یکدست شدن PRهای تیم می‌توان Template ایجاد کرد.
 
-[ref1]: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAutJREFUeJzt27FKHVkYwPHvnNGVCypuIYl9ioUETGG1lfbbapNHSBPIG+QB8gwpAltMtZBHSCOidhZ3K7uUQbl7Ra9z0nglhA2kSS4f/n7VnDPD4Sv/DDMRAACQQJlftNZKRNTDw8PnXdc9rbV2ix0NAIAH6r+u6z6Ox+NPBwcHt/PN+3A9PT3dGIbh7crKyouu62oppXz3KAAA+EmGYWg3NzeX19fXr0opf+/s7NxERCzF3dvWk5OTv9bW1l5sbW39try8vOh5AQB4oFprMZ1Ofz8/P38zm80OW2vjUkqrERF939dSyp8bGxuiFQCAhSqlxGg0itXV1ccRsTXfrxER+/v7ERErtdZFzggAAPfu/rlaul8vdhwAAPgxwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAAp1IiIvu8jIoZFDwMAAHPtznxdIyLOzs5aa+3fyWQyfHUPAAAW4vb2Nq6uri66rvs83yvzi+Pj4ye11n/W19f/GI1GpVZfEQAA8Gu11mIYhri4uBim0+n7rutebm9vT+LrcG2tlaOjo0e11tellGcRsbTQqQEAeJBaa5OI+HB5eflub29vNt8v3zxU+r6vm5ub5X9PAQCAX2B3d3copbSI8B0rAAC5fAGvKorRlGAmSAAAAABJRU5ErkJggg==
-[ref2]: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAvFJREFUeJzt2K1ubFUUwPG1T6elH0mLaOpBkEuBVNX0EbBkXgBDCI+AmM57gEbUERyW4NoRtYg6wJB+XnqmnFkIGHJDQoLhDiv9/czZe59kZ8l/dgQAABTQlovM7M7Pz9/KzM9aa+9FxGi1owEA8Ny01jIiXmbmt/P5/IuTk5Nf//q3/F5eXr799PT09e7u7ovt7e2utfbPNwIAwH9ksVjkzc3N8PDw8NXGxsanR0dHD7F8VT09PW3z+fyj/f39dw8ODppoBQBghdre3t7o6urqw77vX2TmRWstu4iIw8PDlpnv7OzsiFYAAFZubW0tNjc3d4dheHN51kVEjMfj6LpOsQIA8L/R/rTcd6sdBwAA/h3hCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBK6iIizs7OIiH6xWKx6HgAAiIiIxWIxRMRvy/0oImI8Hi8uLi6+v76+/nhra+uN0Wi00iEBAHi+MjMeHx/z/v7+x9baT8vzUUREay1ns9k3t7e3X/Z9/8n6+npb6bQAADxbmRl93/8yDMPnd3d3P7TWMiLi1UBtmdlms9kHmfl+Znp2BQDgteq6LodheJmZ3x0fH/+8jNb4W7hG/FG4bTqdtslk8toHBQCA6XQak8kkX41WAAAo43eGLJv+3H9e6gAAAABJRU5ErkJggg==
-[ref3]: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAuxJREFUeJzt2r9OHUcUwOE5412uACEHS1QUyClJJAqQ/AxISeECP4L7FPQUfgo/Ar0bN1SUlCkSlIImSMhCiD+xpWUzaXwJjemsyxHf183MrnTKn0ZTCgAAJBD3F621ODo66ubn5+Pk5CS+/RsAAHwfa2trbX19fSyl/BsRbbp/F6fHx8eTi4uLX7uu2621/lxrfTazaQEAeLJaa//c3t5+HMfx3dbW1u/TeO2+nsfV1dWryWTyfnV1dbnv+9lOCwDAk9Vam1xfX785PT19eXh4+LqU8neZhuv+/n5trf2ysrKyvLCwUCK8EgAAYHbm5ubi8vLyp1LKj62104hotZRSdnZ2SkS86PtetAIA8Cj0fT+ptU6m63rvTLECAPBoREQZx/GuUevDnwMAwOMgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBIQbgCAJCCcAUAIAXhCgBACsIVAIAUhCsAACkIVwAAUhCuAACkIFwBAEhBuAIAkIJwBQAgBeEKAEAKwhUAgBSEKwAAKQhXAABSEK4AAKQgXAEASEG4AgCQgnAFACAF4QoAQArCFQCAFIQrAAApCFcAAFIQrgAApCBcAQBI4S5cW2uznQQAAB4wDddWa/00DEMTsAAAzFprrQzD8KWU8nm61/1/1j6cnZ297fv++eLiYomI2U0KAMCTNY5jOT8/bzc3N8ettb+mXXpXpwcHB93S0tKbiPitlPJDa837VwAAZuE2Iv7oum53Y2Pjz1JKK/fDtZQSe3t7sb29vVxrfR6uXAEAmIFhGMa+7882Nzc/R4R3rAAA5PIfJDSDkRMqc0cAAAAASUVORK5CYII=
-[ref4]: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAAAGCAYAAAACLxysAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAI9JREFUeJzt2rEJAmEQROGZRezEJizBIsRS9uqyATsRrOHOMfEuFCN/hPeFCwsv3GAlAAAA4A9Ykrq7khyr6jA6CAAAAHh7Jrl2911Sduu0qs5JLmPbAAAAgM1i+5Tkblvb4Wr7lmQ/tg0AAADYLPM8P2xL66uAJCXxNE3+tAkAAAD8UndHUkZ3AAAAAF97AeXvJqloZn1fAAAAAElFTkSuQmCC
-[ref5]: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAAAHCAYAAADJc88JAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAALJJREFUeJzt2rENwkAMRuHfyU1zK8AaqWGRSL4FGIEaJWOwQ5Rh0JkmKWgQFQfS+yoXLl7pwhIAAADwB2wf3L3LOdvbbQAAAOBL5nnWNE3VzEL74erunZmdIuLYOhAAAADY1L7vL+M4rpIiSVLO2ZZlOUg6t64DAAAANo9a6y0iVjNTkqRhGGop5Wpm99Z1AAAAwKamlJaXVwFJiggrpfDjCgAAgJ/h7iEpWncAAAAAH3sC1Eot5PnBKeQAAAAASUVORK5CYII=
-[ref6]: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAABHCAYAAADGK8VlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAvZJREFUeJzt2L1uY0UUwPEz107Ih5RQROnZAi1ZiVRp8gi0yC9AgxCPQOH4PaCmSIfoaBFNlKRIS5EOaFA+l9jh+lDserVCQqJhzVF+v+bOzJVGp/xrIgAAoIC2WGRmd3p6+kFmftlaexERw+WOBgDAU9Nay4h4mZk/zGazrw8PD/9482/xvbi4ePb4+Pjd1tbW842Nja619s83AgDAf2Q+n+f19XV/f3//7erq6hf7+/v3sXhVPTo6arPZ7NOdnZ2Pdnd3m2gFAGCJ2vb29vDy8vKT6XT6PDPPWmvZRUTs7e21zPxwc3NTtAIAsHSDwSDW1ta2+r5/f3HWRUSMRqPouk6xAgDwv9FeW+y75Y4DAAD/jnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACcIVAIAShCsAACUIVwAAShCuAACUIFwBAChBuAIAUIJwBQCgBOEKAEAJwhUAgBKEKwAAJQhXAABKEK4AAJQgXAEAKEG4AgBQgnAFAKAE4QoAQAnCFQCAEoQrAAAlCFcAAEoQrgAAlCBcAQAoQbgCAFCCcAUAoAThCgBACV1ExPHxcUTEdD6fL3seAACIiIj5fN5HxJ+L/TAiYjQazc/Ozn66urr6bH19/b3hcLjUIQEAeLoyMx4eHvLu7u6X1tqvi/NhRERrLc/Pz7+/ubn5Zjqdfr6ystKWOi0AAE9WZsZ0Ov297/uvbm9vf26tZUTE24HaMrOdnJx8PBgMXmSmZ1cAAN6pruuy7/uXmfnjwcHBb4tojb+Fa8Srwm2TyaSNx+N3PigAAEwmkxiPx/l2tAIAQBl/AUFgmP7maSMiAAAAAElFTkSuQmCC
+</div>
+
+```markdown
+## Description
+
+<!-- Explain what changed -->
+
+## Related Issue
+
+Closes #1
+
+## Changes
+
+- [ ] Added feature
+- [ ] Updated documentation
+- [ ] Added tests
+
+## Testing
+
+- [ ] Unit tests passed
+- [ ] Integration tests passed
+- [ ] Manual testing completed
+
+## Checklist
+
+- [ ] Code follows project standards
+- [ ] No secrets committed
+- [ ] Documentation updated if needed
+```
+
+---
+
+## 31. Issue Template
+
+<div dir="rtl">
+
+برای Feature:
+
+</div>
+
+```markdown
+## Feature
+
+### Goal
+
+Describe the goal.
+
+### Requirements
+
+- Requirement 1
+- Requirement 2
+
+### Acceptance Criteria
+
+- [ ] Requirement 1 implemented
+- [ ] Requirement 2 implemented
+- [ ] Tests added
+- [ ] Documentation updated
+```
+
+<div dir="rtl">
+
+برای Bug:
+
+</div>
+
+```markdown
+## Bug
+
+### Description
+
+Describe the problem.
+
+### Steps to Reproduce
+
+1. Step one
+2. Step two
+3. Step three
+
+### Expected Behavior
+
+Describe expected behavior.
+
+### Actual Behavior
+
+Describe actual behavior.
+
+### Environment
+
+- Python:
+- Django:
+- OS:
+
+### Acceptance Criteria
+
+- [ ] Bug is fixed
+- [ ] Regression test added
+```
+
+---
+
+## 32. `.gitignore` و Secretها
+
+<div dir="rtl">
+
+فایل PDF به‌درستی روی جلوگیری از Commit شدن فایل‌هایی مانند `.env` و `node_modules/` تأکید می‌کند.
+
+نمونه مناسب برای پروژه Python/Django:
+
+</div>
+
+```gitignore
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+
+# Django
+db.sqlite3
+staticfiles/
+media/
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+```
+
+<div dir="rtl">
+
+`.gitignore` جایگزین Secret Management نیست. اگر Secret قبلاً Commit شده باشد، صرفاً اضافه کردن آن به `.gitignore` Secret را از History حذف نمی‌کند و باید Credential افشاشده را Rotate/Revoke کرد.
+
+</div>
+
+---
+
+## 33. GitHub Actions — نکات امنیتی
+
+<div dir="rtl">
+
+در Workflowهای حساس بهتر است Permissionهای `GITHUB_TOKEN` حداقل مقدار لازم را داشته باشند.
+
+نمونه:
+
+</div>
+
+```yaml
+permissions:
+  contents: read
+```
+
+<div dir="rtl">
+
+همچنین در Workflowهایی که از Actionهای Third-party استفاده می‌کنند، بررسی Source و نسخه Action اهمیت دارد.
+
+برای پروژه‌های حساس، Pin کردن Actionها به Commit SHA می‌تواند امنیت Supply Chain را افزایش دهد.
+
+</div>
+
+---
+
+## 34. Checklist پروژه GitHub
+
+<div dir="rtl">
+
+### Repository
+
+</div>
+
+```text
+[ ] README.md
+[ ] LICENSE
+[ ] .gitignore
+[ ] .env.example
+[ ] Topics
+[ ] Description
+[ ] Branch rules / rulesets
+```
+
+<div dir="rtl">
+
+### Project Management
+
+</div>
+
+```text
+[ ] Issues
+[ ] Labels
+[ ] Milestones
+[ ] Projects
+[ ] Assignees
+[ ] Issue templates
+```
+
+<div dir="rtl">
+
+### Pull Requests
+
+</div>
+
+```text
+[ ] PR template
+[ ] Code Review
+[ ] Required approvals
+[ ] Required CI checks
+[ ] Squash merge policy
+```
+
+<div dir="rtl">
+
+### CI/CD
+
+</div>
+
+```text
+[ ] GitHub Actions
+[ ] Tests
+[ ] Lint
+[ ] Formatting
+[ ] Build
+[ ] Deployment
+```
+
+<div dir="rtl">
+
+### Security
+
+</div>
+
+```text
+[ ] Dependabot
+[ ] Secret scanning
+[ ] Push protection
+[ ] Code scanning
+[ ] Dependency review
+[ ] Least privilege
+[ ] Secret rotation
+```
+
+---
+
+## 35. خلاصه مهم‌ترین قابلیت‌ها
+
+<div dir="rtl">
+
+| قابلیت | کاربرد اصلی |
+|---|---|
+| Repository | نگهداری کد و فایل‌های پروژه |
+| Branch | توسعه مستقل |
+| Commit | ثبت تغییرات |
+| Issue | مدیریت Task و Bug |
+| Label | دسته‌بندی کارها |
+| Milestone | گروه‌بندی کارها در یک هدف/نسخه |
+| Project | مدیریت Workflow تیم |
+| Pull Request | Review و Merge |
+| Actions | CI/CD و Automation |
+| Secrets | نگهداری مقادیر حساس برای Workflow |
+| Releases | انتشار نسخه |
+| Tags | علامت‌گذاری نسخه یا نقطه مشخص |
+| Pages | میزبانی Static Website |
+| Discussions | گفت‌وگوی پروژه |
+| CODEOWNERS | تعیین مسئول Review قسمت‌های کد |
+| Dependabot | مدیریت Dependency و آسیب‌پذیری‌ها |
+| Code Scanning | تحلیل امنیتی کد |
+| Secret Scanning | شناسایی Secret |
+| Rulesets | اعمال قوانین روی Branch/Tag |
+| Codespaces | محیط توسعه ابری |
+| GitHub CLI | مدیریت GitHub از Terminal |
+| Copilot | کمک توسعه مبتنی بر AI |
+
+</div>
+
+---
+
+## 36. منابع و مراجع
+
+<div dir="rtl">
+
+### محتوای پایه
+
+این سند بر اساس PDF ارائه‌شده با عنوان **GitHub Ultimate Tricks and Tips Cheatsheet FA** تهیه شده است. PDF شامل ترفندهای URL، میانبرها، Search، Repository، Pull Request، GitHub Actions، Secrets، Pages و ابزارهای AI است. fileciteturn0file0L2-L20
+
+بخش‌های Search، Repository، AI و Pull Request نیز از محتوای همان PDF استخراج و توسعه داده شده‌اند. fileciteturn0file0L48-L82 fileciteturn0file0L85-L122
+
+بخش GitHub Actions، Secrets، Pages و `.gitignore` نیز بر اساس محتوای PDF پایه‌گذاری شده است. fileciteturn0file0L125-L138
+
+### مستندات رسمی GitHub
+
+- GitHub Security Features:
+  https://docs.github.com/en/code-security/getting-started/github-security-features
+
+- Repository Rulesets:
+  https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets
+
+- Issue و Pull Request Search:
+  https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/filtering-and-searching-issues-and-pull-requests
+
+- GitHub Secret Types:
+  https://docs.github.com/en/code-security/reference/secret-security/secret-types
+
+- Repository Roles:
+  https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization
+
+</div>
+
+---
+
+<div dir="rtl">
+
+## نکته نهایی
+
+این فایل عمداً فقط یک Cheatsheet ساده نیست. محتوای PDF اولیه حفظ شده و در کنار آن، قابلیت‌هایی که برای **مدیریت حرفه‌ای Repository، کار تیمی، Code Review، CI/CD و Security** اهمیت بیشتری دارند نیز اضافه شده‌اند.
+
+برای پروژه‌ای مانند `library-management-advance`، مهم‌ترین قسمت‌هایی که بهتر است واقعاً استفاده شوند عبارت‌اند از:
+
+**Issues → Milestones → Projects → Branches → Commits → Pull Requests → Code Review → GitHub Actions → Rulesets → Security**
+
+این زنجیره، GitHub را از یک محل صرفاً برای نگهداری کد به یک سیستم کامل برای مدیریت چرخه توسعه نرم‌افزار تبدیل می‌کند.
+
+</div>
